@@ -1,0 +1,22 @@
+
+div{
+  width: 500px;
+  height: 100%;
+  border: 1px solid black;
+  padding: 10px;
+}
+h1{
+  color: blue;
+  line-height: 20px;
+  font-size: 18px;
+  width: 50%;
+  display: inline-block;
+
+}
+p{
+  color: black;
+  line-height: 20px;
+  font-size: 14px;
+  width: 50%;
+  display: inline-block;
+}

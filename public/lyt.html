@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href=""/>
+    <title></title>
+    <link rel="stylesheet" href="stylesheets/style.css"/>
+</head>
+<body>
+<div></div>
+<input type="text" id="user"/>
+<input type="text" id="say"/>
+<button id="btn">提交</button>
+
+<br/>
+</body>
+</html>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+<script>
+    $(function(){
+        var user=$('#user');
+        var say=$('#say');
+        var btn=$('#btn');
+
+        btn.click(function () {
+            console.log(user.val());
+            console.log(say.val());
+            $.ajax({
+                url:"http://localhost:3000/",
+                type:"post",
+                data:{
+                    aaa:user.val(),
+                    bbb:say.val()
+                },
+                success:function(a){
+                    $("body>div").append("<h1>"+ a.title+"</h1>");
+                    $("body>div").append("<p>"+ a.nr+"</p>");
+                    $("body>div").append("<br/>");
+                }
+            })
+        })
+    })
+</script>
